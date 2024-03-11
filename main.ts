@@ -1,15 +1,34 @@
 //conexiones
 enum conn {
-    CON1 = 1,//p8 p0
-    CON2,//p12 p1
-    CON3,//p16 p2
-    CON4,//p6 p3
-    CON5,//p7 p4
-    CON6,//p9 p10
-    CON7,//p13 p14
-    CON8//p15 p11
+    CON1 = 1,   //p8    p0
+    CON2,       //p12   p1
+    CON3,       //p16   p2
+    CON4,       //p6    p3
+    CON5,       //p7    p4
+    CON6,       //p9    p10
+    CON7,       //p13   p14
+    CON8        //p15   p11
 };
 
+//puertos de conexion para la interfaz de mis ladrillos
+//si se necesitan analogicos usar getAnalogPin(DP)
+let digitalCon: any = {
+    1: { P0: DigitalPin.P8,     P1: DigitalPin.P0 },
+    2: { P0: DigitalPin.P12,    P1: DigitalPin.P1 },
+    3: { P0: DigitalPin.P16,    P1: DigitalPin.P2 },
+    4: { P0: DigitalPin.P6,     P1: DigitalPin.P3 },
+    5: { P0: DigitalPin.P7,     P1: DigitalPin.P4 },
+    6: { P0: DigitalPin.P9,     P1: DigitalPin.P10 },
+    7: { P0: DigitalPin.P13,    P1: DigitalPin.P14 },
+    8: { P0: DigitalPin.P15,    P1: DigitalPin.P11 }
+}
+
+enum DireccionMotor {
+    //% block="forward"
+    Adelante,
+    //% block="backward"
+    Atras
+}
 
 enum Names_rgb {
     //% block="Red"
@@ -49,53 +68,6 @@ let valueColors: number[][] = [
     , [0, 0, 0, 0, 0, 0, 0, 0, 0]
 ];
 
-//conexiones
-/*enum conn_a {
-    CON1 = 1,//p8 p0
-    CON2,//p12 p1
-    CON3,//p16 p2
-    CON4,//p6 p3
-    CON5,//p7 p4
-    CON6,//p9 p10
-}*/
-//Comentario 1
-//puertos de conexion para la interfaz de misladrillos
-//si se necesitan analogicos usar getAnalogPin(DP)
-// hola estoy haciendo un update......
-let digitalCon: any = {
-    1: { P0: DigitalPin.P8, P1: DigitalPin.P0 },
-    2: { P0: DigitalPin.P12, P1: DigitalPin.P1 },
-    3: { P0: DigitalPin.P16, P1: DigitalPin.P2 },
-    4: { P0: DigitalPin.P6, P1: DigitalPin.P3 },
-    5: { P0: DigitalPin.P7, P1: DigitalPin.P4 },
-    6: { P0: DigitalPin.P9, P1: DigitalPin.P10 },
-    7: { P0: DigitalPin.P13, P1: DigitalPin.P14 },
-    8: { P0: DigitalPin.P15, P1: DigitalPin.P11 }
-}
-
-//Analog connectors 1, 2, 3, 4, 5, 6
-/*let analogCon: any = {
-    1: {P0: AnalogPin.P0}
-    ,2: {P0: AnalogPin.P1}
-    ,3: {P0: AnalogPin.P2}
-    ,4: {P0: AnalogPin.P3}
-    ,5: {P0: AnalogPin.P4}
-    ,6: {P0: AnalogPin.P10}
-}
-*/
-/*
-//puertos de conexion para el gigglebot
-let digitalCon: any = {//11 16 10 7
-    1: { P0: DigitalPin.P12, P1: DigitalPin.P8 },
-    2: { P0: DigitalPin.P16, P1: DigitalPin.P0 }
-};
-*/
-enum DireccionMotor {
-    //% block="forward"
-    Adelante,
-    //% block="backward"
-    Atras
-}
 
 enum Estados_bicolor {
     //% block="Red"
@@ -159,11 +131,13 @@ enum NeoPixelMode {
     // block="RGB (RGB format)"
     RGB_RGB = 3
 }
+
 enum HueInterpolationDirection {
     Clockwise,
     CounterClockwise,
     Shortest
 }
+
 //% weight=5 color=#ff8000 icon="\uf2db"
 //% groups="['Miscellaneous','Leds', 'Motors','Buzzer','Sensors', 'Actuators']"
 namespace probots {
