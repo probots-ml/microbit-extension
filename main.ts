@@ -3,7 +3,7 @@
 namespace probots{
 
     /**
-     * Get the actual version
+     * Get actual extension version.
      */
     //% blockId=getVersion
     //% block="Version"
