@@ -7,6 +7,8 @@ namespace probots{
      */
     //% blockId=getVersion
     //% block="Version"
+    //% group="Miscellaneous"
+    //% weight=20
     export function version(): string{
         return "1.24.03";
     }
