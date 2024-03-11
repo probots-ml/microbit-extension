@@ -172,17 +172,18 @@ namespace probots {
      * Motors 
      ******************************************************/
 
-
     export class Motor {
         pin1: DigitalPin;
         pina1: AnalogPin;
         pin2: DigitalPin;
         pina2: AnalogPin;
         velocity: number;
+
         setVelocity(vel: number): void {
             let OutputVal = Math.clamp(0, 100, vel) * 10;
             this.velocity = OutputVal;
         }
+
         setpins(pin1: DigitalPin, pin2: DigitalPin): void {
             this.pin1 = pin1;
             this.pina1 = getAnalogPin(pin1);
@@ -217,6 +218,7 @@ namespace probots {
             pins.digitalWritePin(this.pin2, 0);
         }
     }
+
     function getAnalogPin(pin: DigitalPin): any {
         switch (pin) {
             case DigitalPin.P0:
@@ -481,13 +483,13 @@ namespace probots {
         return Math.idiv(d, 58);
     }
 
-    //% block="Servo $con=conexiones_ret|degrees |%grados"
+    //% block="Servo $con=conexiones_ret | degrees | %grados"
     //% group="Motors"
     //% grados.min=0 grados.max=180
     export function servoProbot(con: any, grados: number) {
         return pins.servoWritePin(getAnalogPin(con.P0), grados)
     }
-
+    
     /*
     * 
     * PULSADOR
