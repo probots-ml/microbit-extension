@@ -207,9 +207,9 @@ namespace probots {
                     pins.digitalWritePin(this.pin1, 0);
                     break
             }
-
-
         }
+
+
         //%block="%motor|turn off"
         //% group="Motors"
         //% weight=20
@@ -283,8 +283,8 @@ namespace probots {
 
     //%block="Probot on %cone=conexiones_ret"
     //%blockSetVariable=motor
-    //% group="Motors"
-    //% weight=100
+    //%group="Motors"
+    //%weight=100
     export function createMotor(cone: any): Motor {
         let motor = new Motor();
         motor.setpins(cone.P0, cone.P1);
@@ -293,7 +293,12 @@ namespace probots {
     }
 
 
-
+    //% block="Servo $con=conexiones_ret | degrees | %grados"
+    //% group="Motors"
+    //% grados.min=0 grados.max=180
+    export function servoProbot(con: any, grados: number) {
+        return pins.servoWritePin(getAnalogPin(con.P0), grados)
+    }
 
 
     /*****************************************
@@ -482,14 +487,7 @@ namespace probots {
         const d = pins.pulseIn(cone.P0, PulseValue.High, maxCmDistance * 58);
         return Math.idiv(d, 58);
     }
-
-    //% block="Servo $con=conexiones_ret | degrees | %grados"
-    //% group="Motors"
-    //% grados.min=0 grados.max=180
-    export function servoProbot(con: any, grados: number) {
-        return pins.servoWritePin(getAnalogPin(con.P0), grados)
-    }
-    
+  
     /*
     * 
     * PULSADOR
