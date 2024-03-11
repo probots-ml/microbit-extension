@@ -471,7 +471,15 @@ namespace probots {
     //%group="Actuators"
     // nota* cada conexion tiene dos pines en este caso se lee el de uno solo
     export function pulsador(cone: any): number {
-        return pins.digitalReadPin(cone.P0);
+
+        let reading = pins.digitalReadPin(cone.P0);
+
+        if(reading == 0){
+            return 1;
+        }
+        else{
+            return 0;
+        }      
     }
 
     /*
