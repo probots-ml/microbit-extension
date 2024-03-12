@@ -30,6 +30,14 @@ enum DireccionMotor {
     Atras
 }
 
+enum joystickAction{
+    //%block="X Axis"
+    X_AXIS,
+    //%block="Y Axis"
+    Y_AXIX,
+    //%block="Button"
+    BUTTON
+}
 enum Names_rgb {
     //% block="Red"
     Red = 0,
@@ -482,10 +490,23 @@ namespace probots {
      */
 
     //%blockId=joystick_get_a
-    //%block="Joystick get A"
+    //%block="Joystick get %action"
     //%group="Actuators"
-    export function joystick(): number {
-        return pins.analogReadPin(AnalogPin.P10);
+    export function joystick(action: joystickAction): number {
+        switch(action){
+            case joystickAction.X_AXIS:
+                return pins.analogReadPin(AnalogPin.P9);
+                break;
+            case joystickAction.Y_AXIX:
+                return pins.analogReadPin(AnalogPin.P10);
+                break;
+            case joystickAction.BUTTON:
+                return pins.digitalReadPin(DigitalPin.P15);
+                break;
+            default:
+                return 0;
+                break;
+        }        
     }
     
     /*
