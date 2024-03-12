@@ -485,7 +485,7 @@ namespace probots {
     //%block="Joystick get A"
     //%group="Actuators"
     export function joystick(): number {
-        return pins.analogReadPin(AnalogPin.P9);
+        return pins.analogReadPin(AnalogPin.P10);
     }
     
     /*
