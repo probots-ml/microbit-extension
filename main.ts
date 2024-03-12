@@ -477,6 +477,17 @@ namespace probots {
         }      
     }
 
+    /**
+     * Joystick
+     */
+
+    //%blockId=joystick_get_a
+    //%block="Joystick get A"
+    //%group="Actuators"
+    export function joystick(): number {
+        return pins.analogReadPin(AnalogPin.P9);
+    }
+    
     /*
     * 
     * LASER
