@@ -63,9 +63,9 @@ enum Names_colors {
 }
 
 let valueColors: number[][] = [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0]
-    , [0, 0, 0, 0, 0, 0, 0, 0, 0]
-    , [0, 0, 0, 0, 0, 0, 0, 0, 0]
+        [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    ,   [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    ,   [0, 0, 0, 0, 0, 0, 0, 0, 0]
 ];
 
 
@@ -183,7 +183,6 @@ namespace probots {
             }
         }
 
-
         //%block="%motor|turn off"
         //% group="Motors"
         //% weight=20
@@ -266,7 +265,6 @@ namespace probots {
         return motor;
     }
 
-
     //% block="Servo $con=conexiones_ret | degrees | %grados"
     //% group="Motors"
     //% grados.min=0 grados.max=180
@@ -274,11 +272,9 @@ namespace probots {
         return pins.servoWritePin(getAnalogPin(con.P0), grados)
     }
 
-
     /*****************************************
      * Music
      *******************************************/
-
 
     //%block="Play frecuency $frecuencia|by %duracion|ms on %cone=conexiones_ret"
     //%group="Buzzer"
@@ -297,8 +293,6 @@ namespace probots {
         music.beginMelody(melodyArray, MelodyOptions.Once)
     }
 
-
-
     /**
      * 
      * INFRARROJO
@@ -310,7 +304,6 @@ namespace probots {
     export function infrarrojo(cone: any): number {
         return pins.digitalReadPin(cone.P0);
     }
-
 
     /*
         LED BICOLOR
@@ -337,7 +330,6 @@ namespace probots {
                 break;
         }
     }
-
 
 
     //%block="Probot on $pin=conexiones_ret| of $cantidad_leds|leds"
@@ -411,8 +403,8 @@ namespace probots {
         return b;
     }
 
-    // block="Potentiometer on $con=conexiones_ret"
-    // group="Sensors"
+    //% block="Potentiometer on $con=conexiones_ret"
+    //% group="Sensors"
     export function potenciometro(con: any): number {
         return pins.analogReadPin(getAnalogPin(con.P1))
     }
