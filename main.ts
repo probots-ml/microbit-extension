@@ -434,6 +434,7 @@ namespace probots {
     export function sensorSonido(con: any): number {
         return pins.analogReadPin(getAnalogPin(con.P1))
     }
+
     /******************ULTRASONIDO
      */
     //% blockId=sonar_ping block="Ultrasound on %cone=conexiones_ret"
@@ -502,9 +503,9 @@ namespace probots {
         return analogCon[col];
     }*/
 
-    // blockId="colores_probot" block="%color"
-    // group="Miscellaneous"
-    // weight=2
+    //% blockId="colores_probot" block="%color"
+    //% group="Miscellaneous"
+    //% weight=2
     export function colors(color: Colors): number {
         return color;
     }
