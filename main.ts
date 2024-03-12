@@ -498,10 +498,10 @@ namespace probots {
                 return pins.analogReadPin(AnalogPin.P9);
                 break;
             case joystickAction.Y_AXIX:
-                return pins.analogReadPin(AnalogPin.P10);
+                return pins.analogReadPin(AnalogPin.P5);
                 break;
             case joystickAction.BUTTON:
-                return pins.digitalReadPin(DigitalPin.P5);
+                return pins.digitalReadPin(DigitalPin.P10);
                 break;
             default:
                 return 0;
