@@ -495,13 +495,13 @@ namespace probots {
     export function joystick(action: joystickAction): number {
         switch(action){
             case joystickAction.X_AXIS:
-                return pins.analogReadPin(AnalogPin.P9);
-                break;
-            case joystickAction.Y_AXIX:
                 return pins.analogReadPin(AnalogPin.P10);
                 break;
+            case joystickAction.Y_AXIX:
+                return pins.analogReadPin(AnalogPin.P5);
+                break;
             case joystickAction.BUTTON:
-                return pins.digitalReadPin(DigitalPin.P15);
+                return pins.digitalReadPin(DigitalPin.P11);
                 break;
             default:
                 return 0;
