@@ -501,7 +501,13 @@ namespace probots {
                 return pins.analogReadPin(AnalogPin.P10);
                 break;
             case joystickAction.BUTTON:
-                return ~pins.digitalReadPin(DigitalPin.P5);
+                let buttonState = pins.digitalReadPin(DigitalPin.P5);
+                if(buttonState == 0){
+                    buttonState = 1;
+                } else {
+                    buttonState = 0;
+                }
+                return buttonState;
                 break;
             default:
                 return 0;
