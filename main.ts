@@ -1106,6 +1106,7 @@ namespace probots {
             default: break;
         }
         basic.pause(duracion);
+        rgb_led(Colors_rgb.Black);
         return
     }
 
