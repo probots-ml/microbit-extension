@@ -501,7 +501,7 @@ namespace probots {
                 return pins.analogReadPin(AnalogPin.P10);
                 break;
             case joystickAction.BUTTON:
-                return pins.digitalReadPin(DigitalPin.P5);
+                return ~pins.digitalReadPin(DigitalPin.P5);
                 break;
             default:
                 return 0;
