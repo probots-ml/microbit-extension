@@ -6,7 +6,8 @@
         "core": "*",
         "radio": "*",
         "microphone": "*",
-        "ws2812b": "github:microsoft/pxt-ws2812b#v0.1.2"
+        "ws2812b": "github:microsoft/pxt-ws2812b#v0.1.2",
+        "pxt-tcs34725": "github:samnied/pxt-tcs34725#v0.0.1"
     },
     "files": [
         "main.ts",

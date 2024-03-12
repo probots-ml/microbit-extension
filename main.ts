@@ -489,8 +489,8 @@ namespace probots {
      * Joystick
      */
 
-    //%blockId=joystick_get_a
-    //%block="Joystick get %action"
+    //%blockId=joystick_get_at
+    //%block="Joystick value of %action"
     //%group="Actuators"
     export function joystick(action: joystickAction): number {
         switch(action){
