@@ -1073,24 +1073,30 @@ namespace probots {
                 break;
             case Colors_rgb.Green:
                 pins.digitalWritePin(DigitalPin.P15, 0);
-                pins.digitalWritePin(DigitalPin.P14, 0); // max
+                pins.digitalWritePin(DigitalPin.P14, 0);
                 pins.digitalWritePin(DigitalPin.P13, 1);
                 break;
             case Colors_rgb.Blue:
-                pins.digitalWritePin(DigitalPin.P15, 0); //red
-                pins.digitalWritePin(DigitalPin.P14, 1); //blue
-                pins.digitalWritePin(DigitalPin.P13, 0); //green
+                pins.digitalWritePin(DigitalPin.P15, 0);
+                pins.digitalWritePin(DigitalPin.P14, 1);
+                pins.digitalWritePin(DigitalPin.P13, 0);
                 break;
-            case Colors_rgb.Orange: //100% red 64.7% green 0% blue
+            case Colors_rgb.Yellow:
+                pins.digitalWritePin(DigitalPin.P15, 1);
+                pins.digitalWritePin(DigitalPin.P14, 0);
+                pins.digitalWritePin(DigitalPin.P13, 1);
+                break;
+            case Colors_rgb.Orange:
+                //100% red 64.7% green 0% blue
                 pins.digitalWritePin(DigitalPin.P15, 1); //red
                 pins.digitalWritePin(DigitalPin.P14, 0); //blue
-                pins.analogWritePin(getAnalogPin(DigitalPin.P13), 665);     
+                pins.analogWritePin(getAnalogPin(DigitalPin.P13), 128);
                 //pins.digitalWritePin(DigitalPin.P13, 0);
                 break;
             case Colors_rgb.Violet:
                 pins.digitalWritePin(DigitalPin.P15, 1);
-                pins.digitalWritePin(DigitalPin.P14, 0);
-                pins.digitalWritePin(DigitalPin.P13, 1);
+                pins.digitalWritePin(DigitalPin.P14, 1);
+                pins.digitalWritePin(DigitalPin.P13, 0);
                 break;
             case Colors_rgb.Cyan:
                 pins.digitalWritePin(DigitalPin.P15, 0);
