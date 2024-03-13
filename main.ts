@@ -1171,7 +1171,7 @@ namespace probots {
     }
 
 
-    const ADDR = 0x39;
+    const ADDR = 0x29;
     const APDS9960_ENABLE = 0x80;
     const APDS9960_ATIME = 0x81;
     const APDS9960_CONTROL = 0x8F;
