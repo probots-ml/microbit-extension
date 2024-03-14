@@ -1,4 +1,4 @@
-// Add your code here
+//% weight=100 color=#0fbc11 icon=""
 namespace ML_TCS34725{
 
 /*
@@ -188,16 +188,16 @@ namespace ML_TCS34725{
 
     }
 
-    //% weight=100 color=#0fbc11 icon=""
-    namespace TCS34725 {
+    
+    
 
         let TCS34725_I2C_ADDR = TCS34725_I2C_ADDRESS;
         export let isConnected = false;
         let atimeIntegrationValue = 0;
         let gainSensorValue = 0
 
-    //% blockId=tcs34725_init block="Init Color Sensor I2C"
-    //% group="Sensors"
+        //% blockId=tcs34725_init block="Init Color Sensor I2C"
+        //% group="Sensors"
         export function initSensor(): boolean {
             //REGISTER FORMAT:   CMD | TRANSACTION | ADDRESS
             //REGISTER READ:     TCS34725_REGISTER_COMMAND (0x80) | TCS34725_REGISTER_ID (0x12)
@@ -380,9 +380,6 @@ namespace ML_TCS34725{
 
             return color;
         }
-
-    }
-
 
 
 }
