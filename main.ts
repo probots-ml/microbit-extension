@@ -405,7 +405,7 @@ namespace probots {
      * 
      */
     //%block="Infrared on %cone=conexiones_ret"
-    //%group="Sensors" weight=80 color=#2b64bc
+    //%group="Sensors" weight=70 color=#2b64bc
     // nota* cada conexion tiene dos pines en este caso se lee el de uno solo
     export function infrarrojo(cone: any): number {
         return pins.digitalReadPin(cone.P0);
@@ -517,7 +517,7 @@ namespace probots {
 
 
     //% block="Light on $con=conexiones_ret"
-    //% group="Sensors"
+    //% group="Sensors" color=#e264bc weight=85
     export function sensorLuz(con: any): number {
         return pins.analogReadPin(getAnalogPin(con.P1))
     }
@@ -525,6 +525,7 @@ namespace probots {
     //% block="Read $times| times the light on $con=conexiones_ret"
     //% group="Sensors"
     //% times.defl=10
+    //% color=#e264bc weight=80
     export function sensorLuz_cantidad(times: number, con: any): number {
         let temp = 0.0;
         let a = 0;
