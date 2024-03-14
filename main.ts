@@ -405,7 +405,7 @@ namespace probots {
      * 
      */
     //%block="Infrared on %cone=conexiones_ret"
-    //%group="Sensors"
+    //%group="Sensors" weight=80 color=#2b64bcff
     // nota* cada conexion tiene dos pines en este caso se lee el de uno solo
     export function infrarrojo(cone: any): number {
         return pins.digitalReadPin(cone.P0);
@@ -546,6 +546,7 @@ namespace probots {
     //% blockId=sonar_ping block="Ultrasound on %cone=conexiones_ret"
     //% group="Sensors"
     //% inlineInputMode=inline
+    //% weight=90 color=#e7e700ff
 
     export function ping(cone: any): number {
         // send pulse
