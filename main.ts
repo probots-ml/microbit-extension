@@ -38,7 +38,61 @@ namespace RegisterHelper {
 
 }
 
+/* #region Enums for Modes, etc */
 
+// Parameters for setting the internal integration time of the RGBC clear and IR channel.
+enum TCS34725_ATIME {
+    TIME_2_4_MS = 0xFF,    // 1 2.4 ms 1024
+    TIME_24_MS = 0xF6,     // 10 24 ms 10240
+    TIME_100_MS = 0xD5,    // 42 101 ms 43008
+    TIME_154_MS = 0xC0,    // 64 154 ms 65535
+    TIME_700_MS = 0x00     // 256 700 ms 65535
+}
+
+// Parameters for setting the wait time register.
+enum TCS34725_WTIME {
+    WTIME_2_4_MS = 0xFF,    // 1 2.4 ms 0.029 sec
+    WTIME_204_MS = 0xAB,    // 85 204 ms 2.45 sec
+    WTIME_614_MS = 0x00     // 256 614 ms 7.4 sec
+}
+
+// Parameters for...
+enum RGB {
+    RED,
+    GREEN,
+    BLUE,
+    CLEAR
+}
+
+// Parameters for setting the persistence register. The persistence register controls the filtering interrupt capabilities of the device.
+enum TCS34725_APERS {
+    APERS_0_CLEAR = 0b0000,      // Every RGBC cycle generates an interrupt
+    APERS_1_CLEAR = 0b0001,      // 1 clear channel value outside of threshold range
+    APERS_2_CLEAR = 0b0010,      // 2 clear channel consecutive values out of range
+    APERS_3_CLEAR = 0b0011,      // 3 clear channel consecutive values out of range
+    APERS_5_CLEAR = 0b0100,      // 5 clear channel consecutive values out of range
+    APERS_10_CLEAR = 0b0101,     // 10 clear channel consecutive values out of range
+    APERS_15_CLEAR = 0b0110,     // 15 clear channel consecutive values out of range
+    APERS_20_CLEAR = 0b0111,     // 20 clear channel consecutive values out of range
+    APERS_25_CLEAR = 0b1000,     // 25 clear channel consecutive values out of range
+    APERS_30_CLEAR = 0b1001,     // 30 clear channel consecutive values out of range
+    APERS_35_CLEAR = 0b1010,     // 35 clear channel consecutive values out of range
+    APERS_40_CLEAR = 0b1011,     // 40 clear channel consecutive values out of range
+    APERS_45_CLEAR = 0b1100,     // 45 clear channel consecutive values out of range
+    APERS_50_CLEAR = 0b1101,     // 50 clear channel consecutive values out of range
+    APERS_55_CLEAR = 0b1110,     // 55 clear channel consecutive values out of range
+    APERS_60_CLEAR = 0b1111,     // 60 clear channel consecutive values out of range
+}
+
+// Parameters for setting the gain of the sensor.
+enum TCS34725_AGAIN {
+    GAIN_1X = 0x0,      // 1x gain
+    GAIN_4X = 0x1,      // 4x gain
+    GAIN_16X = 0x2,      // 16x gain
+    GAIN_60X = 0x3       // 60x gain
+}
+
+/* #endregion */
 
 //conexiones
 enum conn {
@@ -1277,61 +1331,7 @@ namespace probots {
     const TCS34725_REGISTER_BDATAH = 0x1B		// Blue data high byte
 
 
-    /* #region Enums for Modes, etc */
-
-    // Parameters for setting the internal integration time of the RGBC clear and IR channel.
-    enum TCS34725_ATIME {
-        TIME_2_4_MS = 0xFF,    // 1 2.4 ms 1024
-        TIME_24_MS = 0xF6,     // 10 24 ms 10240
-        TIME_100_MS = 0xD5,    // 42 101 ms 43008
-        TIME_154_MS = 0xC0,    // 64 154 ms 65535
-        TIME_700_MS = 0x00     // 256 700 ms 65535
-    }
-
-    // Parameters for setting the wait time register.
-    enum TCS34725_WTIME {
-        WTIME_2_4_MS = 0xFF,    // 1 2.4 ms 0.029 sec
-        WTIME_204_MS = 0xAB,    // 85 204 ms 2.45 sec
-        WTIME_614_MS = 0x00     // 256 614 ms 7.4 sec
-    }
-
-    // Parameters for...
-    enum RGB {
-        RED,
-        GREEN,
-        BLUE,
-        CLEAR
-    }
-
-    // Parameters for setting the persistence register. The persistence register controls the filtering interrupt capabilities of the device.
-    enum TCS34725_APERS {
-        APERS_0_CLEAR = 0b0000,      // Every RGBC cycle generates an interrupt
-        APERS_1_CLEAR = 0b0001,      // 1 clear channel value outside of threshold range
-        APERS_2_CLEAR = 0b0010,      // 2 clear channel consecutive values out of range
-        APERS_3_CLEAR = 0b0011,      // 3 clear channel consecutive values out of range
-        APERS_5_CLEAR = 0b0100,      // 5 clear channel consecutive values out of range
-        APERS_10_CLEAR = 0b0101,     // 10 clear channel consecutive values out of range
-        APERS_15_CLEAR = 0b0110,     // 15 clear channel consecutive values out of range
-        APERS_20_CLEAR = 0b0111,     // 20 clear channel consecutive values out of range
-        APERS_25_CLEAR = 0b1000,     // 25 clear channel consecutive values out of range
-        APERS_30_CLEAR = 0b1001,     // 30 clear channel consecutive values out of range
-        APERS_35_CLEAR = 0b1010,     // 35 clear channel consecutive values out of range
-        APERS_40_CLEAR = 0b1011,     // 40 clear channel consecutive values out of range
-        APERS_45_CLEAR = 0b1100,     // 45 clear channel consecutive values out of range
-        APERS_50_CLEAR = 0b1101,     // 50 clear channel consecutive values out of range
-        APERS_55_CLEAR = 0b1110,     // 55 clear channel consecutive values out of range
-        APERS_60_CLEAR = 0b1111,     // 60 clear channel consecutive values out of range
-    }
-
-    // Parameters for setting the gain of the sensor.
-    enum TCS34725_AGAIN {
-        GAIN_1X = 0x0,      // 1x gain
-        GAIN_4X = 0x1,      // 4x gain
-        GAIN_16X = 0x2,      // 16x gain
-        GAIN_60X = 0x3       // 60x gain
-    }
-
-    /* #endregion */
+   
 
    
     let TCS34725_I2C_ADDR = TCS34725_I2C_ADDRESS;
