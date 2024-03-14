@@ -510,7 +510,7 @@ namespace probots {
     }
 
     //% block="Potentiometer on $con=conexiones_ret"
-    //% group="Sensors"
+    //% group="Sensors" weight=50 color=#e20e16
     export function potenciometro(con: any): number {
         return pins.analogReadPin(getAnalogPin(con.P1))
     }
