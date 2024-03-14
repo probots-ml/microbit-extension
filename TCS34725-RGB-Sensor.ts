@@ -198,19 +198,19 @@ namespace ML_TCS34725{
 
         //% blockId=tcs34725_init block="Init Color Sensor I2C"
         //% group="Sensors"
-        export function initSensor(): number {
+        export function initSensor(): boolean {
             //REGISTER FORMAT:   CMD | TRANSACTION | ADDRESS
             //REGISTER READ:     TCS34725_REGISTER_COMMAND (0x80) | TCS34725_REGISTER_ID (0x12)
             let device_id = RegisterHelper.readRegister8(TCS34725_I2C_ADDRESS, TCS34725_REGISTER_COMMAND | TCS34725_REGISTER_ID)
 
             //Check that device Identification has one of 2 i2c addresses         
-            if ((device_id != 0x44) && (device_id != 0x10)) {
+            if ((device_id != 0x44) && (device_id != 0x4D)) {//(device_id != 0x10)) {
                 isConnected = false;
             }
             else
                 isConnected = true;
 
-            return device_id;
+            return isConnected;
         }
 
         export function turnSensorOn(atime: TCS34725_ATIME) {
