@@ -1436,7 +1436,7 @@ namespace probots {
 
     //% blockId="start_colorSensor" block="Start sensor with integration time %atime and %gain"
     //% group="Sensors"
-    //% weight=5 color=#338012
+    //% weight=10 color=#338012
     export function start(atime: TCS34725_ATIME, gain: TCS34725_AGAIN) {
 
         while (!isConnected) {
@@ -1507,6 +1507,7 @@ namespace probots {
     }
     //% blockId="getSensorData" block="get color data %colorId"
     //% group="Sensors"
+    //% weight=9 color=#338012
     export function getSensorData(colorId: RGB): number {
         let data = getSensorRGB();
         let color = 0;
