@@ -1126,7 +1126,7 @@ namespace probots {
      * 
      */
     //% block="RGB LED on CONN 7 show color %color=colores_rgb"
-    //% group="Sensors"
+    //% group="Sensors" weight=92
     // nota* cada conexion tiene dos pines en este caso se lee el de uno solo
     export function rgb_led(color: Colors_rgb) {
         switch (color) {
@@ -1188,7 +1188,7 @@ namespace probots {
      * 
      */
     //% block="RGB LED on CONN 7 show color %color=colores_rgb by %duracion|ms"
-    //% group="Sensors"
+    //% group="Sensors" weight=93 
     // nota* cada conexion tiene dos pines en este caso se lee el de uno solo
     export function rgb_led_time(color: Colors_rgb, duracion: number) {
         switch (color) {
