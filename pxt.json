@@ -10,7 +10,8 @@
     },
     "files": [
         "main.ts",
-        "README.md"
+        "README.md",
+        "TCS34725-RGB-Sensor.ts"
     ],
     "testFiles": [
         "test.ts"
