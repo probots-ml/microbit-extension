@@ -1,5 +1,5 @@
 
-namespace probots{
+namespace RGBcolorSensor{
     // Samuel Niederer
     // TCS34725 extension
     const TCS34725_I2C_ADDRESS = 0x29        //I2C address of the TCS34725 (Page 34)
@@ -150,8 +150,8 @@ namespace probots{
         let atimeIntegrationValue = 0;
         let gainSensorValue = 0
 
-        //% blockId=tcs34725_init block="Init Color Sensor I2C"
-        //% group="Sensors"
+        // blockId=tcs34725_init block="Init Color Sensor I2C"
+        // group="Sensors"
         export function initSensor(): void {
             //REGISTER FORMAT:   CMD | TRANSACTION | ADDRESS
             //REGISTER READ:     TCS34725_REGISTER_COMMAND (0x80) | TCS34725_REGISTER_ID (0x12)
@@ -247,7 +247,7 @@ namespace probots{
 
         //% blockId="start_colorSensor" block="Start sensor with integration time %atime and %gain"
         //% group="Sensors"
-        export function start(atime: TCS34725_ATIME, gain: TCS34725_AGAIN) {
+    export function start(atime: TCS34725_ATIME, gain: TCS34725_AGAIN) {
 
             while (!isConnected) {
                 initSensor();
