@@ -1593,20 +1593,24 @@ namespace probots {
             _sensorresponding = false
             startTime = input.runningTimeMicros()
 
+            if (pullUp) {
+                pins.setPull(dataPin, PinPullMode.PullUp);
+            } //pull up data pin if needed
+            basic.pause(1);
+
             //request data
             pins.digitalWritePin(dataPin, 0) //begin protocol, pull down pin
-            basic.pause(20); // son 18 en realidad
+            
+            basic.pause(20); // son 18 en realidad        
 
-            if (pullUp){ 
+            if (pullUp) {
                 pins.setPull(dataPin, PinPullMode.PullUp);
-                } //pull up data pin if needed
-                else{
-                pins.digitalWritePin(dataPin, 1);
-                }
-           
-            let dataIn = pins.digitalReadPin(dataPin) //pull up pin
-            control.waitMicros(40)
+            }
 
+            control.waitMicros(40);
+            
+            let dataIn = pins.digitalReadPin(dataPin) //pull up pin
+           
             if (pins.digitalReadPin(dataPin) == 1) {
                 if (serialOtput) {
                     serial.writeLine("Pin value " + dataIn);
