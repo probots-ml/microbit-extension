@@ -1604,7 +1604,7 @@ namespace probots {
                 pins.setPull(dataPin, PinPullMode.PullUp);
             }
             
-            pins.digitalWritePin(dataPin, 1)
+            //pins.digitalWritePin(dataPin, 1)
 
             control.waitMicros(40);
                     
