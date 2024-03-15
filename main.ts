@@ -1598,11 +1598,13 @@ namespace probots {
             basic.pause(18)
 
             if (pullUp) pins.setPull(dataPin, PinPullMode.PullUp) //pull up data pin if needed
-            pins.digitalReadPin(dataPin) //pull up pin
+           
+            let dataIn = pins.digitalReadPin(dataPin) //pull up pin
             control.waitMicros(40)
 
             if (pins.digitalReadPin(dataPin) == 1) {
                 if (serialOtput) {
+                    serial.writeLine("Pin value " + dataIn);
                     serial.writeLine(DHTstr + " not responding!")
                     serial.writeLine("----------------------------------------")
                 }
