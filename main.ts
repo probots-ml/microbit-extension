@@ -1593,13 +1593,13 @@ namespace probots {
             _sensorresponding = false
             startTime = input.runningTimeMicros()
            
-            basic.pause(1);
 
             //request data
             pins.digitalWritePin(dataPin, 0) //begin protocol, pull down pin
-            
-            basic.pause(20); // son 18 en realidad        
 
+            basic.pause(30); // son 18 en realidad  
+                  
+            pins.digitalWritePin(dataPin, 1) 
             if (pullUp) {
                 pins.setPull(dataPin, PinPullMode.PullUp);
             }
