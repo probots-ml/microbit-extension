@@ -1596,7 +1596,18 @@ namespace probots {
 
             //request data
             pins.digitalWritePin(dataPin, 0) //begin protocol, pull down pin
-            basic.pause(18)
+           
+            
+            if (serialOtput) 
+            {
+                serial.writeLine("Pin value before 18 ms = " + pins.digitalReadPin(dataPin));
+            }
+
+            basic.pause(20) //18ms minimo
+
+            if (serialOtput) {
+                serial.writeLine("Pin value after 18 ms = " + pins.digitalReadPin(dataPin));
+            }
 
             if (pullUp) pins.setPull(dataPin, PinPullMode.PullUp) //pull up data pin if needed
             pins.digitalReadPin(dataPin) //pull up pin
