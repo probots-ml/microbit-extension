@@ -1595,7 +1595,7 @@ namespace probots {
 
             //request data
             pins.digitalWritePin(dataPin, 0) //begin protocol, pull down pin
-            basic.pause(18)
+            basic.pause(20); // son 18 en realidad
 
             if (pullUp){ 
                 pins.setPull(dataPin, PinPullMode.PullUp);
