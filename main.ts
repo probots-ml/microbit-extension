@@ -1595,14 +1595,16 @@ namespace probots {
            
 
             //request data
+            pins.setPull(dataPin, PinPullMode.PullNone);
             pins.digitalWritePin(dataPin, 0) //begin protocol, pull down pin
 
-            basic.pause(30); // son 18 en realidad  
-                  
-            pins.digitalWritePin(dataPin, 1) 
+            basic.pause(18); // son 18 en realidad  
+                             
             if (pullUp) {
                 pins.setPull(dataPin, PinPullMode.PullUp);
             }
+            
+            pins.digitalWritePin(dataPin, 1)
 
             control.waitMicros(40);
                     
