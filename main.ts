@@ -1597,7 +1597,12 @@ namespace probots {
             pins.digitalWritePin(dataPin, 0) //begin protocol, pull down pin
             basic.pause(18)
 
-            if (pullUp) pins.setPull(dataPin, PinPullMode.PullUp) //pull up data pin if needed
+            if (pullUp){ 
+                pins.setPull(dataPin, PinPullMode.PullUp);
+                } //pull up data pin if needed
+                else{
+                pins.digitalWritePin(dataPin, 1);
+                }
            
             let dataIn = pins.digitalReadPin(dataPin) //pull up pin
             control.waitMicros(40)
