@@ -1609,8 +1609,11 @@ namespace probots {
 
             control.waitMicros(40);
             
+            
+            while (pins.digitalReadPin(dataPin) == 1); //sensor response
+
             let dataIn = pins.digitalReadPin(dataPin) //pull up pin
-           
+            
             if (pins.digitalReadPin(dataPin) == 1) {
                 if (serialOtput) {
                     serial.writeLine("Pin value " + dataIn);
