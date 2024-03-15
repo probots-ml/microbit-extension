@@ -1592,10 +1592,7 @@ namespace probots {
             _readSuccessful = false
             _sensorresponding = false
             startTime = input.runningTimeMicros()
-
-            if (pullUp) {
-                pins.setPull(dataPin, PinPullMode.PullUp);
-            } //pull up data pin if needed
+           
             basic.pause(1);
 
             //request data
@@ -1608,10 +1605,7 @@ namespace probots {
             }
 
             control.waitMicros(40);
-            
-            
-            while (pins.digitalReadPin(dataPin) == 1); //sensor response
-
+                    
             let dataIn = pins.digitalReadPin(dataPin) //pull up pin
             
             if (pins.digitalReadPin(dataPin) == 1) {
