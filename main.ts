@@ -1595,24 +1595,15 @@ namespace probots {
            
 
             //request data
-            pins.setPull(dataPin, PinPullMode.PullNone);
             pins.digitalWritePin(dataPin, 0) //begin protocol, pull down pin
+            basic.pause(18)
 
-            basic.pause(18); // son 18 en realidad  
-                             
-            if (pullUp) {
-                pins.setPull(dataPin, PinPullMode.PullUp);
-            }
-            
-            //pins.digitalWritePin(dataPin, 1)
-
-            control.waitMicros(40);
-                    
-            let dataIn = pins.digitalReadPin(dataPin) //pull up pin
+            if (pullUp) pins.setPull(dataPin, PinPullMode.PullUp) //pull up data pin if needed
+            pins.digitalReadPin(dataPin) //pull up pin
+            control.waitMicros(40)
             
             if (pins.digitalReadPin(dataPin) == 1) {
                 if (serialOtput) {
-                    serial.writeLine("Pin value " + dataIn);
                     serial.writeLine(DHTstr + " not responding!")
                     serial.writeLine("----------------------------------------")
                 }
