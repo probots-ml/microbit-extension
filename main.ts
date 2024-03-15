@@ -1605,7 +1605,7 @@ namespace probots {
                 }
            
             let dataIn = pins.digitalReadPin(dataPin) //pull up pin
-            control.waitMicros(50)
+            control.waitMicros(40)
 
             if (pins.digitalReadPin(dataPin) == 1) {
                 if (serialOtput) {
