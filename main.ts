@@ -1541,10 +1541,10 @@ namespace probots {
         return dht11_dht22.readData(dataType.humidity);
         }
 
-    //% blockId="dht11_dht22_readTemp" block="get temperature on %cone=conexiones_ret in %scale=DHTtype"
+    //% blockId="dht11_dht22_readTemp" block="get temperature on %cone=conexiones_ret | in %scale=DHTtype"
     //% group="Sensors"
     //% weight=80 color=#225055
-    //%scale.defl= tempType.celsius
+    //% scale.defl= tempType.celsius
     export function ReadTemp(cone: any, scale: any): number {
         //dht11_dht22.queryData(DHTtype.DHT11, DigitalPin.P16, false, true, true);   
         dht11_dht22.selectTempType(scale);
