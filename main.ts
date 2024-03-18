@@ -1534,10 +1534,10 @@ namespace probots {
 
     //% blockId="dht11_dht22_readHum" block="get humidity"
     //% group="Sensors"
-    //% weight=80 color=#118012
-    export function ReadHum(): number{
+    //% weight=80 color=#225055
+    export function ReadHum(): number {
         dht11_dht22.queryData(DHTtype.DHT11, DigitalPin.P16, false, true, true);
         //queryData(DHT: DHTtype, dataPin: DigitalPin, pullUp: boolean, serialOtput: boolean, wait: boolean) {
-            return dht11_dht22.readData(dataType.humidity);
-    }
+        return dht11_dht22.readData(dataType.humidity);
+        }
 }
