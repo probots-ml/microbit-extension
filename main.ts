@@ -1,28 +1,4 @@
-/**
- * MakeCode editor extension for DHT11 and DHT22 humidity/temperature sensors
- * by Alan Wang
- */
 
-enum DHTtype {
-    //% block="DHT11"
-    DHT11,
-    //% block="DHT22"
-    DHT22,
-}
-
-enum dataType {
-    //% block="humidity"
-    humidity,
-    //% block="temperature"
-    temperature,
-}
-
-enum tempType {
-    //% block="Celsius (*C)"
-    celsius,
-    //% block="Fahrenheit (*F)"
-    fahrenheit,
-}
 
 
 //Functions for helping with reading and writing registers of different sizes
