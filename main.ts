@@ -1532,12 +1532,12 @@ namespace probots {
         return color;
     }
 
-    //% blockId="dht11_dht22_readHum" block="get humidity"
+    //% blockId="dht11_dht22_readHum" block="get humidity on %cone=conexiones_ret"
     //% group="Sensors"
     //% weight=80 color=#225055
-    export function ReadHum(): number {
-        dht11_dht22.queryData(DHTtype.DHT11, DigitalPin.P16, false, true, true);
-        //queryData(DHT: DHTtype, dataPin: DigitalPin, pullUp: boolean, serialOtput: boolean, wait: boolean) {
+    export function ReadHum(cone: any): number {
+        //dht11_dht22.queryData(DHTtype.DHT11, DigitalPin.P16, false, true, true);
+        dht11_dht22.queryData(DHTtype.DHT11, cone.P0, false, true, true);
         return dht11_dht22.readData(dataType.humidity);
         }
 }
