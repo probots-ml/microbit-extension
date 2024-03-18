@@ -2,5 +2,5 @@
 // Show the version in the screen
 
 basic.forever(function () {
-  probots.ReadHum(conn.CON2);
+ 
 })
