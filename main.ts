@@ -1576,7 +1576,7 @@ namespace probots {
     * //// MICROPHONE //////////////////////////////////////
     */
 
-    //% block="Microphone detect sound %db=soundIntensity on $con=conexiones_ret"
+    //% block="Microphone detect sound $db=soundIntensity on $con=conexiones_ret"
     //% group="Sensors" color=#e264bc weight=85
     export function getMicrophoneSound(db: any, con: any): boolean {
         let getDB = pins.analogReadPin(con.P1);
