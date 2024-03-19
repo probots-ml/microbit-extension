@@ -528,7 +528,7 @@ namespace probots {
     //% block="Read $times| times the light on $con=conexiones_ret"
     //% group="Sensors"
     //% times.defl=10
-    //% color=#e264bc weight=80
+    //% color=#e264bc weight=84
     export function sensorLuz_cantidad(times: number, con: any): number {
         let temp = 0.0;
         let a = 0;
