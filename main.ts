@@ -1582,21 +1582,13 @@ enum tempType {
 
 namespace dht11_dht22 {
 
-    let _temperature: number = -999.0
-    let _humidity: number = -999.0
+    let _temperature: number = -99.0
+    let _humidity: number = -99.0
     let _temptype: tempType = tempType.celsius
     let _readSuccessful: boolean = false
     let _sensorresponding: boolean = false
 
-    /**
-    * Query data from DHT11/DHT22 sensor. If you are using 4 pins/no PCB board versions, you'll need to pull up the data pin. 
-    * It is also recommended to wait 1 (DHT11) or 2 (DHT22) seconds between each query.
-    */
-    //% block="Query $DHT|Data pin $dataPin|Pin pull up $pullUp|Serial output $serialOtput|Wait 2 sec after query $wait"
-    //% pullUp.defl=true
-    //% serialOtput.defl=false
-    //% wait.defl=true
-    //% blockExternalInputs=true
+    
     export function queryData(DHT: DHTtype, dataPin: DigitalPin, pullUp: boolean, serialOtput: boolean, wait: boolean) {
 
         //initialize
@@ -1701,34 +1693,22 @@ namespace dht11_dht22 {
 
     }
 
-    /**
-    * Read humidity/temperature data from lastest query of DHT11/DHT22
-    */
-    //% block="Read $data"
+   
     export function readData(data: dataType): number {
         return data == dataType.humidity ? _humidity : _temperature
     }
 
-    /**
-    * Select temperature type (Celsius/Fahrenheit)"
-    */
-    //% block="Temperature type: $temp" advanced=true
+    
     export function selectTempType(temp: tempType) {
         _temptype = temp
     }
 
-    /**
-    * Determind if last query is successful (checksum ok)
-    */
-    //% block="Last query successful?"
+
     export function readDataSuccessful(): boolean {
         return _readSuccessful
     }
 
-    /**
-    * Determind if sensor responded successfully (not disconnected, etc) in last query
-    */
-    //% block="Last query sensor responding?" advanced=true
+   
     export function sensorrResponding(): boolean {
         return _sensorresponding
     }
