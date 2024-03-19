@@ -525,6 +525,12 @@ namespace probots {
         return pins.analogReadPin(getAnalogPin(con.P1))
     }
 
+    //% block="Button on $con=conexiones_ret"
+    //% group="Sensors" weight=51 color=#e20e16
+    export function buttonIsPressed(con: any): boolean {
+        return pins.digitalReadPin(con.P0) === 1 ? true : false;
+    }
+
 
     //% block="Light on $con=conexiones_ret"
     //% group="Sensors" color=#e264bc weight=85
