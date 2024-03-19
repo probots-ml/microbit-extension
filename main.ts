@@ -1584,7 +1584,7 @@ namespace probots {
         let getDB = pins.analogReadPin(getAnalogPin(con.P1));
         serial.writeLine("db=" + getDB);
         
-        if(db == soundIntensity.LOW && getDB >= 900)
+        if(db == soundIntensity.HIGH && getDB >= 1000)
         {
             return true;
         }
@@ -1592,7 +1592,7 @@ namespace probots {
         {
             return true;
         }
-        else if (db == soundIntensity.HIGH && getDB >= 1000) {
+        else if (db == soundIntensity.LOW && getDB >= 900) {
             return true;
         }
         else{
