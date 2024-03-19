@@ -1,5 +1,12 @@
-
-
+// Enum data to use in microphone
+enum soundIntensity {
+    //% block="low"
+    LOW,
+    //% block="medium"
+    MEDIUM,
+    //% block="high"
+    HIGH
+}
 
 //Functions for helping with reading and writing registers of different sizes
 namespace RegisterHelper {
@@ -1563,6 +1570,32 @@ namespace probots {
         dht11_dht22.queryData(DHTtype.DHT11, cone.P0, false, true, true);
         return dht11_dht22.readData(dataType.temperature);
     }
+
+
+    /*
+    * //// MICROPHONE //////////////////////////////////////
+    */
+
+    //% block="Microphone detect sound %db=soundIntensity on $con=conexiones_ret"
+    //% group="Sensors" color=#e264bc weight=85
+    export function getMicrophoneSound(db: any, con: any): boolean {
+        let getDB = pins.analogReadPin(con.P1);
+        if(db == soundIntensity.LOW && getDB >= 900)
+        {
+            return true;
+        }
+        else if (db == soundIntensity.MEDIUM && getDB >= 950)
+        {
+            return true;
+        }
+        else if (db == soundIntensity.HIGH && getDB >= 1000) {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
 }
 
 
@@ -1727,35 +1760,3 @@ namespace dht11_dht22 {
     }
 }
 
-
-namespace microphone{
-enum soundIntensity{
-    //% block="low"
-    LOW,
-    //% block="medium"
-    MEDIUM,
-    //% block="high"
-    HIGH
-}
-
-//% block="Microphone detect sound %db=soundIntensity on $con=conexiones_ret"
-//% group="Sensors" color=#e264bc weight=85
-export function getMicrophoneSound(db: any, con: any): boolean {
-    let getDB = pins.analogReadPin(con.P1);
-    if(db == soundIntensity.LOW && getDB >= 900)
-    {
-        return true;
-    }
-    else if (db == soundIntensity.MEDIUM && getDB >= 950)
-    {
-        return true;
-    }
-    else if (db == soundIntensity.HIGH && getDB >= 1000) {
-        return true;
-    }
-    else{
-        return false;
-    }
-}
-
-}
