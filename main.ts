@@ -1582,6 +1582,8 @@ namespace probots {
     //%group="Sensors" color=#a1e1a0 weight=40
     export function getMicrophoneSound(db: soundIntensity, con: any): boolean {
         let getDB = pins.analogReadPin(getAnalogPin(con.P1));
+        serial.writeLine("db=" + getDB);
+        
         if(db == soundIntensity.LOW && getDB >= 900)
         {
             return true;
