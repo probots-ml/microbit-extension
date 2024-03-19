@@ -1578,10 +1578,10 @@ namespace probots {
 
     //%blockId="getMicrophoneSound"
     //%block="Microphone detect sound %db=soundIntensity on %con=conexiones_ret"
-    //% $db.default=soundIntensity.MEDIUM
+    //%db.defl=soundIntensity.MEDIUM
     //%group="Sensors" color=#e264bc weight=85
     export function getMicrophoneSound(db: soundIntensity, con: any): boolean {
-        let getDB = pins.analogReadPin(con.P1);
+        let getDB = pins.analogReadPin(con.P0);
         if(db == soundIntensity.LOW && getDB >= 900)
         {
             return true;
