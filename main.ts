@@ -408,10 +408,17 @@ namespace probots {
      * 
      */
     //%block="Infrared on %cone=conexiones_ret"
-    //%group="Sensors" weight=70 color=#2b64bc
+    //%group="Sensors" weight=71 color=#2b64bc
     // nota* cada conexion tiene dos pines en este caso se lee el de uno solo
     export function infrarrojo(cone: any): number {
         return pins.digitalReadPin(cone.P0);
+    }
+
+    //%block="Infrared is ON on %cone=conexiones_ret"
+    //%group="Sensors" weight=70 color=#2b64bc
+    // nota* cada conexion tiene dos pines en este caso se lee el de uno solo
+    export function infrarrojoOn(cone: any): boolean {
+        return  pins.digitalReadPin(cone.P0) === 1 ? true: false ;
     }
 
     /*
@@ -547,7 +554,7 @@ namespace probots {
 
     /******************ULTRASONIDO
      */
-    //% blockId=sonar_ping block="Ultrasound on %cone=conexiones_ret"
+    //% blockId=sonar_ping block="Ultrasound cm. on %cone=conexiones_ret"
     //% group="Sensors"
     //% inlineInputMode=inline
     //% weight=90 color=#e7e700
