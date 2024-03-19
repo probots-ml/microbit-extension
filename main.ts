@@ -1726,3 +1726,36 @@ namespace dht11_dht22 {
         return _sensorresponding
     }
 }
+
+
+namespace microphone{
+enum soundIntensity{
+    //% block="low"
+    LOW,
+    //% block="medium"
+    MEDIUM,
+    //% block="high"
+    HIGH
+}
+
+//% block="Microphone detect sound %db=soundIntensity on $con=conexiones_ret"
+//% group="Sensors" color=#e264bc weight=85
+export function getMicrophoneSound(db: any, con: any): boolean {
+    let getDB = pins.analogReadPin(con.P1);
+    if(db == soundIntensity.LOW && getDB >= 900)
+    {
+        return true;
+    }
+    else if (db == soundIntensity.MEDIUM && getDB >= 950)
+    {
+        return true;
+    }
+    else if (db == soundIntensity.HIGH && getDB >= 1000) {
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+}
