@@ -1600,6 +1600,19 @@ namespace probots {
         }
     }
 
+
+    /*
+  * //// HUMEDAD EN TIERRA //////////////////////////////////////
+  */
+
+    //%blockId="getSoilMoisture"
+    //%block="detect ground humidity on %con=conexiones_ret"
+    //%group="Sensors" color=#a1e1a0 weight=39
+    export function getSoilMoisture(con: any): boolean {
+        return  pins.digitalReadPin(con.P0) === 1 ? false : true;
+    }
+
+
 }
 
 
