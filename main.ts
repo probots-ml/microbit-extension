@@ -528,7 +528,7 @@ namespace probots {
     //% block="Button on $con=conexiones_ret"
     //% group="Sensors" weight=51 color=#e20e16
     export function buttonIsPressed(con: any): boolean {
-        return pins.digitalReadPin(con.P0) === 1 ? true : false;
+        return pins.digitalReadPin(con.P0) === 1 ? false : true;
     }
 
 
