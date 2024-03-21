@@ -1618,14 +1618,14 @@ namespace probots {
     */
 
     //%blockId="oledInit"
-    //%block="init OLED in $i2cAddress"
+    //%block="init OLED in I2C address $i2cAddress"
     //%i2cAddress.defl=60
     //%group="Screens" color=#442299 weight=100
     export function oledInit(i2cAddress: number){
         OLED12864_I2C.init(i2cAddress);
     }
 
-    //%blockId="oledInit"
+    //%blockId="oledClear"
     //%block="clear screen"
     //%group="Screens" color=#442299 weight=99
     export function oledClear() {
