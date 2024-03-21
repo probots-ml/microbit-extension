@@ -10,7 +10,8 @@
     },
     "files": [
         "main.ts",
-        "README.md"
+        "README.md",
+        "OLED12864_I2C.ts"
     ],
     "testFiles": [
         "test.ts"
