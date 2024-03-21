@@ -1617,27 +1617,17 @@ namespace probots {
     * ///////  OLED DISPLAY  //////////////////////////////////
     */
 
-    //%blockId="oledInit"
+    //%blockId="createOLED"
     //%block="init OLED in I2C address $i2cAddress"
     //%i2cAddress.defl=60
     //%group="Screens" color=#442299 weight=100
-    export function oledInit(i2cAddress: number){
-        OLED12864_I2C.init(i2cAddress);
-    }
-
-    //%blockId="oledClear"
-    //%block="clear screen"
-    //%group="Screens" color=#442299 weight=99
-    export function oledClear() {
-        OLED12864_I2C.clear();
-    }
-
-    //%blockId="oledPrintText"
-    //%block="print text $textToPrint at line $line y in position $position"
-    //%group="Screens" color=#442299 weight=98
-    export function oledPrintText(textToPrint: string, line:  number, position: number){
-        OLED12864_I2C.showString(position, line, textToPrint);
-    }
+    export function createOLED(i2cAddress: number): OLED.OLED12864_I2C {
+        let oledScreen = new OLED.OLED12864_I2C();
+        oledScreen.init(i2cAddress)
+        oledScreen.clear()
+        return oledScreen;
+    } 
+    
 }
 
 
