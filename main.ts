@@ -1621,13 +1621,20 @@ namespace probots {
     //%block="init OLED in I2C address $i2cAddress"
     //%i2cAddress.defl=60
     //%group="Screens" color=#442299 weight=100
-    export function createOLED(i2cAddress: number): OLED.OLED12864_I2C {
-        let oledScreen = new OLED.OLED12864_I2C();
-        oledScreen.init(i2cAddress)
-        oledScreen.clear()
-        return oledScreen;
+    export function createOLED(i2cAddress: number): void {
+        OLED12864_I2C.init(i2cAddress)
+        OLED12864_I2C.clear()
     } 
-    
+
+    //%blockId="oledSetText"
+    //%block="set text $text in line $y at position $x"
+    //%text.defl="hello"
+    //%y.defl=0
+    //%x.defl=0
+    //%group="Screens" color=#442299 weight=100
+    export function oledSetText(x:number , y: number, text: string): void {
+        OLED12864_I2C.showString(0,0,text);
+    }
 }
 
 
