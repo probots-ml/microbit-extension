@@ -11,7 +11,8 @@
     },
     "files": [
         "main.ts",
-        "README.md"
+        "README.md",
+        "_locales/es/microbit-extension-strings.json"
     ],
     "testFiles": [
         "test.ts"
