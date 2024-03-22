@@ -7,7 +7,7 @@
         "radio": "*",
         "microphone": "*",
         "ws2812b": "github:microsoft/pxt-ws2812b#v0.1.2",
-        "OLED12864_I2C": "github:probots-ml/oled12864_i2c#v1.5.1"
+        "OLED12864_I2C": "github:probots-ml/oled12864_i2c#v1.5.2"
     },
     "files": [
         "main.ts",
