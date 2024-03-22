@@ -12,7 +12,7 @@
     "files": [
         "main.ts",
         "README.md",
-        "_locales/es/microbit-extension-strings.json"
+        "_locales/es/main-strings.json"
     ],
     "testFiles": [
         "test.ts"
