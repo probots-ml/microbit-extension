@@ -1631,9 +1631,19 @@ namespace probots {
     //%text.defl="hello"
     //%y.defl=0
     //%x.defl=0
-    //%group="Screens" color=#442299 weight=100
+    //%group="Screens" color=#442299 weight=99
     export function oledSetText(x:number , y: number, text: string): void {
-        OLED12864_I2C.showString(0,0,text);
+        OLED12864_I2C.showString(x, y,text);
+    }
+
+    //%blockId="oledSetNumber"
+    //%block="set number $myNumber in line $y at position $x"
+    //%myNumber.defl=99
+    //%y.defl=0
+    //%x.defl=0
+    //%group="Screens" color=#442299 weight=98
+    export function oledSetNumber(x: number, y: number, myNumber: number): void {
+        OLED12864_I2C.showNumber(x, y, myNumber);
     }
 }
 
