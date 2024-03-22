@@ -1626,12 +1626,19 @@ namespace probots {
         OLED12864_I2C.clear()
     } 
 
+    //%blockId="oledClearScreen"
+    //%block="clear screen"
+    //%group="Screens" color=#442299 weight=99
+    export function oledClearScreen(): void {
+        OLED12864_I2C.clear();
+    }
+
     //%blockId="oledSetText"
     //%block="set text $text in line $y at position $x"
     //%text.defl="hello"
     //%y.defl=0
     //%x.defl=0
-    //%group="Screens" color=#442299 weight=99
+    //%group="Screens" color=#442299 weight=98
     export function oledSetText(x:number , y: number, text: string): void {
         OLED12864_I2C.showString(x, y,text);
     }
@@ -1641,7 +1648,7 @@ namespace probots {
     //%myNumber.defl=99
     //%y.defl=0
     //%x.defl=0
-    //%group="Screens" color=#442299 weight=98
+    //%group="Screens" color=#442299 weight=97
     export function oledSetNumber(x: number, y: number, myNumber: number): void {
         OLED12864_I2C.showNumber(x, y, myNumber);
     }
