@@ -1,1 +1,3 @@
-"_locales/ja/neopixel-strings.json",
+{
+  "oledClearScreen" : "limpiar pantalla"
+}
