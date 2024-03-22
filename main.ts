@@ -527,13 +527,13 @@ namespace probots {
     }
 
     //% block="Potentiometer on $con=conexiones_ret"
-    //% group="Sensors" weight=50 color=#e20e16
+    //% group="Actuators" weight=50 color=#e20e16
     export function potenciometro(con: any): number {
         return pins.analogReadPin(getAnalogPin(con.P1))
     }
 
     //% block="Button on $con=conexiones_ret"
-    //% group="Sensors" weight=51 color=#e20e16
+    //% group="Actuators" weight=51 color=#e20e16
     export function buttonIsPressed(con: any): boolean {
         return pins.digitalReadPin(con.P0) === 1 ? false : true;
     }
@@ -592,7 +592,7 @@ namespace probots {
     * 
     */
     //%block="Button on %cone=conexiones_ret"
-    //%group="Actuators"
+    //% group="Actuators" weight=50 color=#e20e16
     // nota* cada conexion tiene dos pines en este caso se lee el de uno solo
     export function pulsador(cone: any): number {
 
@@ -612,7 +612,7 @@ namespace probots {
 
     //%blockId=joystick_get_at
     //%block="Joystick value of %action"
-    //%group="Actuators"
+    //% group="Actuators" weight=49 color=#e27725
     export function joystick(action: joystickAction): number {
         switch(action){
             case joystickAction.X_AXIS:
