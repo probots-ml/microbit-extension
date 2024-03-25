@@ -1552,7 +1552,10 @@ namespace probots {
         return color;
     }
 
-    //% blockId="dht11_dht22_readHum" block="get humidity on %cone=conexiones_ret"
+    //% blockId="dht11_dht22_readHum" 
+    //% block="get humidity on %cone=conexiones_ret"
+    //% block.loc.es="$obtener humedad en %cone=conexiones_ret"
+    //% jsdoc.loc.es="Obtener el valor de humedad relativa ambiente en el puerto de comunicaciones seleccionado."
     //% group="Sensors"
     //% weight=81 color=#225055
     export function ReadHum(cone: any): number {
