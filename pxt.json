@@ -1,6 +1,6 @@
 {
     "name": "Probots Mis Ladrillos - Microbit Extension",
-    "version": "0.3.0",
+    "version": "3.0.4",
     "description": "",
     "dependencies": {
         "core": "*",
