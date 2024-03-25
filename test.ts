@@ -2,6 +2,7 @@
 // Show the version in the screen
 probots.createOLED(60)
 probots.oledSetText(1,1,"max head")
+probots.oledClearScreen();
 basic.forever(function () {
     
 })
