@@ -1,7 +1,7 @@
 {
-    "name": "Probots Mis Ladrillos - Microbit Extension",
+    "name": "probots-microbi-extension",
     "version": "3.0.4",
-    "description": "",
+    "description": "Probots Mis Ladrillos - Microbit Extension",
     "dependencies": {
         "core": "*",
         "radio": "*",
