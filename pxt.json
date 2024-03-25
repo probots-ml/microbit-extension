@@ -12,7 +12,8 @@
     "files": [
         "main.ts",
         "README.md",
-        "_locales/es/main-strings.json"
+        "_locales/es/main-strings.json",
+        "RotaryEncoder.ts"
     ],
     "testFiles": [
         "test.ts"
